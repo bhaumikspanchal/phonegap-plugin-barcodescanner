@@ -222,18 +222,14 @@ public class BarcodeScanner extends CordovaPlugin {
                                     callbackContext.sendPluginResult(result);
                                 }
                             };
-                            /* IntentFilter filter = new IntentFilter("bulk-barcode-result");
+                            IntentFilter filter = new IntentFilter("bulk-barcode-result");
 
                             if (BarcodeScanner.this.broadcastManager == null) {
                                 BarcodeScanner.this.broadcastManager = LocalBroadcastManager
                                         .getInstance(that.cordova.getActivity());
                             }
                             BarcodeScanner.this.broadcastManager
-                                    .registerReceiver(BarcodeScanner.this.continuousModeBroadcastReceiver, filter); */
-                            Intent intermediateResult = new Intent("bulk-barcode-result");
-                            intermediateResult.putExtra(Intents.Scan.RESULT, rawResult.toString());
-                            intermediateResult.putExtra(Intents.Scan.RESULT_FORMAT, rawResult.getBarcodeFormat().toString());
-                            LocalBroadcastManager.getInstance(that.cordova.getActivity()).sendBroadcast(intermediateResult);
+                                    .registerReceiver(BarcodeScanner.this.continuousModeBroadcastReceiver, filter);
                         }
                     }
 
