@@ -233,7 +233,7 @@ public class BarcodeScanner extends CordovaPlugin {
                             Intent intermediateResult = new Intent("bulk-barcode-result");
                             intermediateResult.putExtra(Intents.Scan.RESULT, rawResult.toString());
                             intermediateResult.putExtra(Intents.Scan.RESULT_FORMAT, rawResult.getBarcodeFormat().toString());
-                            LocalBroadcastManager.getInstance(this).sendBroadcast(intermediateResult);
+                            LocalBroadcastManager.getInstance(that.cordova.getActivity()).sendBroadcast(intermediateResult);
                         }
                     }
 
