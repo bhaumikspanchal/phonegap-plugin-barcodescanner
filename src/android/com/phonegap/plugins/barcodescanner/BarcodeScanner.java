@@ -15,7 +15,6 @@ import org.json.JSONObject;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.widget.Toast; 
 import android.os.Bundle;
 import android.util.Log;
 import android.content.pm.PackageManager;
@@ -219,7 +218,6 @@ public class BarcodeScanner extends CordovaPlugin {
                                         Log.d(LOG_TAG, "This should never happen");
                                     }
 
-                                    Toast.makeText(that.cordova.getActivity().getApplicationContext(),"Scanned : "+intent.getStringExtra(Intents.Scan.RESULT),Toast.LENGTH_SHORT).show();  
                                     PluginResult result = new PluginResult(PluginResult.Status.OK, obj);
                                     result.setKeepCallback(true);
                                     callbackContext.sendPluginResult(result);
